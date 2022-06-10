@@ -51,4 +51,20 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-console.log(playRound(computerPlay(), computerPlay()));
+// Once the hardcoded 5 round version works, I could try implementing a customizable number of rounds.
+function playGame() {
+    // Define message to display in prompt + number of rounds
+    const promptMessage = "Enter your selection below:";
+    const rounds = 5;
+
+    // Display a message to let the player know what will follow.
+    alert(`Let's play Rock, Paper, Scissors! There will be ${rounds} rounds in this game.`)
+    
+    // Plays specified number of rounds.
+    for (let i = 0; i < rounds; i++) {
+        // Play a round and display the results
+        alert(playRound(prompt(promptMessage), computerPlay()));
+    }
+}
+
+playGame();
