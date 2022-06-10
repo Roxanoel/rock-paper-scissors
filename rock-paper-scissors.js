@@ -4,9 +4,9 @@ function computerPlay() {
     
     // Returns string corresponding with value
     switch(value) {
-        case 0: return "Rock";
-        case 1: return "Paper";
-        case 2: return "Scissors";
+        case 0: return "rock";
+        case 1: return "paper";
+        case 2: return "scissors";
         default: 
         console.log("Warning, value was out of bounds");
         return "Value out of bounds";
@@ -15,4 +15,15 @@ function computerPlay() {
 
 console.log(computerPlay());
 
-//function playRound(playerSelection, computerSelection)
+function playRound(playerSelection, computerSelection) {
+    
+    // Transform playerSelection to match format of computerSelection
+    playerSelection = playerSelection.toLowerCase();
+
+    // Define the messages that can be returned by this function
+    const winMessage = `You win! ${playerSelection} beats ${computerSelection}.`
+    const loseMessage =`You lose! ${computerSelection} beats ${playerSelection}.`
+    const drawMessage = `It's a draw! You both picked ${playerSelection}.`
+
+    //
+}
