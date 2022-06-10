@@ -53,7 +53,7 @@ function playRound(playerSelection, computerSelection) {
 
 // Once the hardcoded 5 round version works, I could try implementing a customizable number of rounds.
 function playGame() {
-    // Define message to display in prompt + number of rounds
+    // Config params
     const promptMessage = "Enter your selection below:";
     const rounds = 5;
 
@@ -68,3 +68,8 @@ function playGame() {
 }
 
 playGame();
+
+// Other ideas for when I return to this:
+// - Verify value entered by the player is valid and make them try again until they
+//   enter a valid value before proceeding with the game. 
+// - Keep track of "points" and display total points at the end.
