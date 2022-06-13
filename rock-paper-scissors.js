@@ -19,10 +19,7 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
 
     // Define the messages that can be returned by this function
-    const winMessage = `You win! ${playerSelection} beats ${computerSelection}.`
-    const loseMessage =`You lose! ${computerSelection} beats ${playerSelection}.`
     const drawMessage = `It's a draw! You both picked ${playerSelection}.`
-    const errorMessage = `The results could not be determined, since the value entered was invalid.`
 
     //Ensure the value entered by the player was valid: TO DO
     if (!(playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors")) {
@@ -33,17 +30,17 @@ function playRound(playerSelection, computerSelection) {
     switch (playerSelection) {
         case "rock":
             if (computerSelection === "rock") return drawMessage;
-            else if (computerSelection === "paper") return loseMessage;
-            else if (computerSelection === "scissors") return winMessage;
+            else if (computerSelection === "paper") return processComputerWin(computerSelection, playerSelection);
+            else if (computerSelection === "scissors") return processPlayerWin(computerSelection, playerSelection);
             break;
         case "paper":
-            if (computerSelection === "rock") return winMessage;
+            if (computerSelection === "rock") return processPlayerWin(computerSelection, playerSelection);
             else if (computerSelection === "paper") return drawMessage;
-            else if (computerSelection === "scissors") return loseMessage;
+            else if (computerSelection === "scissors") return processComputerWin(computerSelection, playerSelection);
             break;
         case "scissors":
-            if (computerSelection === "rock") return loseMessage;
-            else if (computerSelection === "paper") return winMessage;
+            if (computerSelection === "rock") return processComputerWin(computerSelection, playerSelection);
+            else if (computerSelection === "paper") return processPlayerWin(computerSelection, playerSelection);
             else if (computerSelection === "scissors") return drawMessage;
             break;
         default:
@@ -51,34 +48,37 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function processComputerWin(computerSelection, playerSelection) {
+    computerScore +=1;
+    return `You lose! ${computerSelection} beats ${playerSelection}.`;
+}
+
+function processPlayerWin(computerSelection, playerSelection) {
+    playerScore +=1;
+    return `You win! ${playerSelection} beats ${computerSelection}.`;
+}
+
+
 function processSelection(e) {
     resultsDisplay.innerText = playRound(e.target.innerText, computerPlay());
+    updateScoreDisplay();
+}
+
+function updateScoreDisplay() {
+    computerScoreDisplay.innerText = computerScore.toString();
+    playerScoreDisplay.innerText = playerScore.toString();
 }
 
 const selectionButtons = document.querySelectorAll('.selection');
 selectionButtons.forEach(button => button.addEventListener('click', processSelection));
 
 const resultsDisplay = document.querySelector('.results-message');
+const playerScoreDisplay = document.querySelector('.player');
+const computerScoreDisplay = document.querySelector('.computer');
 
-///////////////
-///GRAVEYARD///
-///////////////
+let playerScore = 0;
+let computerScore = 0;
 
-// Removed rounds functionality for now
-function playGame() {
-    // Config params
-    const promptMessage = "Enter your selection below:";
-    //const rounds = 5;
-
-    // Display a message to let the player know what will follow.
-    alert(`Let's play Rock, Paper, Scissors!`)
-    
-    // Plays specified number of rounds.
-    //for (let i = 0; i < rounds; i++) {
-        // Play a round and display the results
-        alert(playRound(prompt(promptMessage), computerPlay()));
-    //}
-}
 
 
 
