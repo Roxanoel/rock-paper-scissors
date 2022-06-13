@@ -51,6 +51,18 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function processSelection(e) {
+    alert(playRound(e.target.innerText, computerPlay()));
+}
+
+const selectionButtons = document.querySelectorAll('.selection');
+selectionButtons.forEach(button => button.addEventListener('click', processSelection));
+
+
+///////////////
+///GRAVEYARD///
+///////////////
+
 // Removed rounds functionality for now
 function playGame() {
     // Config params
@@ -67,7 +79,7 @@ function playGame() {
     //}
 }
 
-playGame();
+
 
 // Other ideas for when I return to this:
 // - Verify value entered by the player is valid and make them try again until they
