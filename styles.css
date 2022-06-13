@@ -1,0 +1,8 @@
+.flex-container {
+    display: flex;
+    gap: 16px;
+}
+
+.score {
+    text-align: center;
+}

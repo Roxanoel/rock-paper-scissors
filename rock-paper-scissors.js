@@ -58,7 +58,7 @@ function processSelection(e) {
 const selectionButtons = document.querySelectorAll('.selection');
 selectionButtons.forEach(button => button.addEventListener('click', processSelection));
 
-const resultsDisplay = document.querySelector('.results-display');
+const resultsDisplay = document.querySelector('.results-message');
 
 ///////////////
 ///GRAVEYARD///

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, paper, scissors</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="rock-paper-scissors.js" defer></script>
 </head>
 <body>
@@ -13,7 +14,17 @@
     <button class="selection">Scissors</button>
 
     <div class="results-display">
-        
+        <p class="results-message"> </p>
+        <div class="flex-container">
+            <div>
+                <h2>Player Score</h2>
+                <p class="score player"></p>
+            </div>
+            <div>
+                <h2>Computer Score</h2>
+                <p class="score computer"></p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
