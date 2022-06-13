@@ -1,8 +1,43 @@
-.flex-container {
+body {
+    background-color: hsl(330, 10%, 85%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+button {
+    font-size: 20px;
+}
+
+.flex-horizontal {
     display: flex;
     gap: 16px;
 }
 
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.selection-box {
+    background-color: hsl(329, 40%, 70%);
+    width: 416px;
+    height: 160px;
+    justify-content: center;
+    align-items: center;
+}
+
 .score {
     text-align: center;
+    font-size: 36px;
+    color: wheat;
+    font-weight: 900;
+}
+
+.scorebox {
+    background-color: hsl(28, 90%, 40%);
+    width: 200px;
+    height: 200px;
 }

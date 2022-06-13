@@ -9,18 +9,25 @@
     <script src="rock-paper-scissors.js" defer></script>
 </head>
 <body>
-    <button class="selection">Rock</button>
-    <button class="selection">Paper</button>
-    <button class="selection">Scissors</button>
+    <h1>Let's play rock, papers, scissors!</h1>
+    <p>First one to win five rounds wins the game.</p>
+    <div class="flex-vertical selection-box">
+        <h2>Make your selection:</h2>
+        <div class="flex-horizontal">
+            <button class="selection">Rock</button>
+            <button class="selection">Paper</button>
+            <button class="selection">Scissors</button>
+        </div>
+    </div>
 
     <div class="results-display">
         <p class="results-message"> </p>
-        <div class="flex-container">
-            <div>
+        <div class="flex-horizontal">
+            <div class="scorebox flex-vertical"">
                 <h2>Player Score</h2>
                 <p class="score player"></p>
             </div>
-            <div>
+            <div class="scorebox flex-vertical">
                 <h2>Computer Score</h2>
                 <p class="score computer"></p>
             </div>
