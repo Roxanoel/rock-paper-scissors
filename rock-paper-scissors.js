@@ -64,9 +64,36 @@ function processSelection(e) {
     updateScoreDisplay();
 }
 
+function resetScores() {
+    computerScore = 0;
+    playerScore = 0;
+}
+
 function updateScoreDisplay() {
     computerScoreDisplay.innerText = computerScore.toString();
     playerScoreDisplay.innerText = playerScore.toString();
+
+    checkForWin();
+}
+
+function checkForWin() {
+    if (playerScore === 5) {
+        alert(`Congratulations, you won!`);
+        resetGame();
+    }
+    if (computerScore === 5) {
+        alert(`Oh no, the computer won!`);
+        resetGame();
+    }
+}
+
+function resetGame() {
+    // Erases scoreboard
+    resetScores();
+    updateScoreDisplay();
+
+    // Erases round results message
+    resultsDisplay.innerText = "";
 }
 
 const selectionButtons = document.querySelectorAll('.selection');
