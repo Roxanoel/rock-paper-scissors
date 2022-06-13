@@ -52,12 +52,13 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function processSelection(e) {
-    alert(playRound(e.target.innerText, computerPlay()));
+    resultsDisplay.innerText = playRound(e.target.innerText, computerPlay());
 }
 
 const selectionButtons = document.querySelectorAll('.selection');
 selectionButtons.forEach(button => button.addEventListener('click', processSelection));
 
+const resultsDisplay = document.querySelector('.results-display');
 
 ///////////////
 ///GRAVEYARD///
